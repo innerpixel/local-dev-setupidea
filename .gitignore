@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.npm/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data
+data/
+
+# SSL certificates
+ssl/
+*.pem
+*.key
+*.crt
+
+# IDE
+.vscode/
+.idea/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Test coverage
+coverage/

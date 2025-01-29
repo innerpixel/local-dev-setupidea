@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSMCL - Local Development</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .api-test {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        #api-response {
+            white-space: pre-wrap;
+            background: #e0e0e0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSMCL Local Development</h1>
+    <div class="api-test">
+        <h2>API Test</h2>
+        <button onclick="testAPI()">Test API Connection</button>
+        <div id="api-response"></div>
+    </div>
+
+    <script>
+        async function testAPI() {
+            const response = document.getElementById('api-response');
+            try {
+                const res = await fetch('https://api.local-dev.test/api/health');
+                const data = await res.json();
+                response.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                response.textContent = 'Error: ' + err.message;
+            }
+        }
+    </script>
+</body>
+</html>

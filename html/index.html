@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Development API</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        code {
+            background-color: #eee;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .method {
+            font-weight: bold;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Development API</h1>
+    <p>Welcome to the Local Development API. This API provides user management and profile services.</p>
+    
+    <h2>Available Endpoints</h2>
+    
+    <div class="endpoint">
+        <p><span class="method">POST</span> <code>/api/auth/register</code></p>
+        <p>Register a new user</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <code>/api/auth/login</code></p>
+        <p>Login and receive JWT token</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <code>/api/auth/me</code></p>
+        <p>Get current user information</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <code>/api/profiles</code></p>
+        <p>Get all public profiles</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">GET</span> <code>/api/profiles/:username</code></p>
+        <p>Get public profile by username</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">PUT</span> <code>/api/profiles/:username</code></p>
+        <p>Update user profile</p>
+    </div>
+
+    <div class="endpoint">
+        <p><span class="method">POST</span> <code>/api/profiles/:username/avatar</code></p>
+        <p>Upload profile avatar</p>
+    </div>
+
+    <h2>Authentication</h2>
+    <p>Protected endpoints require a JWT token in the Authorization header:</p>
+    <code>Authorization: Bearer &lt;your-token&gt;</code>
+
+    <h2>Example Usage</h2>
+    <p>Register a new user:</p>
+    <pre><code>curl -X POST https://local-dev.test/api/auth/register \
+    -H "Content-Type: application/json" \
+    -d '{
+        "username": "testuser",
+        "email": "test@example.com",
+        "password": "password123"
+    }'</code></pre>
+</body>
+</html>
