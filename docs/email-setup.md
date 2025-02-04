@@ -1,4 +1,4 @@
-# Local Email Configuration
+# Local Email Configuration Laptop.  
 
 ## Overview
 This document describes the email configuration setup for the local development environment using neomutt and postfix.
@@ -21,6 +21,28 @@ set smtp_url = "smtp://localhost:25"
 unset smtp_pass
 set ssl_starttls = no
 set ssl_force_tls = no
+
+## IMAP Server Configuration
+
+The IMAP server (Dovecot) is configured to listen on:
+
+### Secure IMAP (IMAPS)
+- Port: 993
+- Security: SSL/TLS
+- Available on: All interfaces (IPv4 and IPv6)
+
+### Standard IMAP with STARTTLS
+- Port: 143
+- Security: STARTTLS
+- Available on: All interfaces (IPv4 and IPv6)
+
+### Client Configuration
+For email clients, use these settings:
+- Server: local-dev.test
+- Username: zero-innerpixel
+- Choose either:
+  - Port 993 with SSL/TLS (recommended)
+  - Port 143 with STARTTLS
 
 # Alias settings for consistent domain usage
 alias zero-innerpixel zero-innerpixel <zero-innerpixel@local-dev.test>
