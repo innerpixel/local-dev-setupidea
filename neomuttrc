@@ -1,0 +1,78 @@
+# Account Settings
+set realname = "Local Dev User"
+set from = "zero-innerpixel@local-dev.test"
+
+# Maildir Settings
+set mbox_type = Maildir
+set folder = ~/Maildir
+set spoolfile = +/
+set record = +.Sent
+set postponed = +.Drafts
+set trash = +.Trash
+
+# IMAP Settings
+set imap_user = "zero-innerpixel"
+set imap_check_subscribed = yes
+
+# SMTP Settings
+set smtp_url = "smtp://localhost:25"
+unset smtp_pass
+set ssl_starttls = no
+set ssl_force_tls = no
+
+# SSL/TLS Settings
+set ssl_verify_host = no
+set ssl_verify_dates = no
+
+# Cache and Storage
+set header_cache = ~/.cache/mutt/headers
+set message_cachedir = ~/.cache/mutt/bodies
+set certificate_file = ~/.mutt/certificates
+
+# Basic Interface Settings
+set sort = threads
+set sort_aux = reverse-last-date-received
+set date_format = "%Y-%m-%d %H:%M"
+set index_format = "%4C %Z %{%b %d} %-15.15L (%4l) %s"
+set mail_check = 60
+set timeout = 10
+
+# Colors
+color normal default default
+color indicator brightwhite blue
+color status brightwhite blue
+color tree brightmagenta default
+color error brightred default
+color message brightyellow default
+color quoted green default
+color signature cyan default
+color attachment brightyellow default
+color search brightred black
+color hdrdefault cyan default
+color quoted green default
+color quoted1 yellow default
+color quoted2 red default
+color quoted3 magenta default
+color quoted4 cyan default
+color quoted5 blue default
+
+# Source aliases file
+source ~/.neomutt/aliases
+
+# Alias settings for consistent domain usage
+alias zero-innerpixel zero-innerpixel <zero-innerpixel@local-dev.test>
+set reverse_alias = yes
+
+# Sidebar
+set sidebar_visible = yes
+set sidebar_width = 30
+set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+# Key Bindings
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+bind index,pager R group-reply
+set ssl_force_tls=yes
+set ssl_force_tls=yes
